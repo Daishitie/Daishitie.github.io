@@ -1,0 +1,9 @@
+#To enforce or deny complete folder listing
+IndexIgnore *
+
+RewriteEngine On
+RewriteRule ^404/?$ / [NC]
+RewriteRule ^403/?$ / [NC]
+
+ErrorDocument 404 /
+ErrorDocument 403 /
