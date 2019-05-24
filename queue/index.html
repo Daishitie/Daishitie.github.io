@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QUEUE - Emmanuel See Te</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        .mat-chip-list {
+            position: relative;
+            display: block;
+            margin: 2em;
+        }
+        .mat-chip.mat-standard-chip {
+            background-color: #e0e0e0;
+            color: rgba(0, 0, 0, .87);
+        }
+        .mat-chip {
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            transform: translateZ(0);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .mat-standard-chip {
+            transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+            display: inline-flex;
+            padding: 7px 12px;
+            border-radius: 16px;
+            align-items: center;
+            cursor: default;
+            min-height: 32px;
+            height: 1px;
+        }
+    </style>
+</head>
+<body>
+    <mat-chip-list class="mat-chip-list">
+        <mat-chip class="mat-chip mat-standard-chip" id="queue">0</mat-chip>
+        <mat-chip class="mat-chip mat-standard-chip" id="interval">0</mat-chip>
+    </mat-chip-list>
+
+    <script>
+        setInterval(function(){
+            var queue = Math.floor((Math.random()*999)+0);
+            var time  = Math.floor((Math.random()*2)+0) + ":" + Math.floor((Math.random()*6)+0) + Math.floor((Math.random()+9)+0);
+            console.log(queue + " " + time);
+            document.getElementById("queue").innerHTML = queue;
+            document.getElementById("interval").innerHTML = time;
+        }, 2000);
+    </script>
+</body>
+</html>
